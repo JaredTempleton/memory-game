@@ -1,6 +1,10 @@
 import Background from './components/Background';
 
+import useGetImages from './hooks/useGetImages';
+
 function App() {
+    useGetImages();
+
     return (
         <>
             <Background />
