@@ -1,4 +1,5 @@
 import Background from './components/Background';
+import Settings from './components/Settings';
 
 import useGetImages from './hooks/useGetImages';
 
@@ -11,6 +12,7 @@ function App() {
         <>
             <Background />
             <h1>Memory Game</h1>
+            <Settings />
         </>
     );
 }
