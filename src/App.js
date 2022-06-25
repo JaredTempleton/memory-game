@@ -1,18 +1,21 @@
+import { useState } from 'react';
+
 import Background from './components/Background';
+import Board from './components/Board';
 import Settings from './components/Settings';
 
-import useGetImages from './hooks/useGetImages';
-
 function App() {
-    const images = useGetImages();
+    const [gameOptions, setGameOptions] = useState(null);
 
-    console.log({ images });
+    const startGame = options => {
+        setGameOptions(options);
+    };
 
     return (
         <>
             <Background />
             <h1>Memory Game</h1>
-            <Settings />
+            {!gameOptions ? <Settings startGame={startGame} /> : <Board gameOptions={gameOptions}/>}
         </>
     );
 }
